@@ -4,9 +4,9 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 */
-const endTime = new Date(2015,11,25,0,0,0);
-//var endTime = new Date();
-//endTime.setTime(endTime.getTime() + 15*1000);
+//const endTime = new Date(2015,11,25,0,0,0);
+var endTime = new Date();
+endTime.setTime(endTime.getTime() + 15*1000);
 
 var curShowTimeSeconds = 0;
 
