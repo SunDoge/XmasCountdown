@@ -4,19 +4,24 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 */
+
 //const endTime = new Date(2015,11,25,0,0,0);
+
+//test mode
 var endTime = new Date();
 endTime.setTime(endTime.getTime() + 15*1000);
 
+//initialization
 var curShowTimeSeconds = 0;
 
 var k = 0;
 var l = 14;
-var temp = [];
+var temp = [];//for the random falling balls
 
-var balls = [];
-const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"]
+var balls = [];//all balls which need rendering
+const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"]//random colors
 
+//entrance
 window.onload = function(){
 
     WINDOW_WIDTH = document.body.clientWidth
@@ -150,9 +155,10 @@ function updateBalls(){
         }else if( balls[i].y >= WINDOW_HEIGHT-RADIUS ){
             balls[i].y = WINDOW_HEIGHT-RADIUS;
             balls[i].vy = - balls[i].vy*0.75;
-        }
+        }//bounce
     }
 
+    //delete outside balls
     var cnt = 0
     for( var i = 0 ; i < balls.length ; i ++ )
         if( balls[i].x + RADIUS > 0 && balls[i].x -RADIUS < WINDOW_WIDTH )
@@ -229,6 +235,7 @@ function renderDigit( x , y , num , cxt ){
             }
 }
 
+//for Xmas
 function addBall(x,y,i,j){
     if(mx[i][j] == 1){
         var aBall = {
